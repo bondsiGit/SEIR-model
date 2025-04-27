@@ -52,17 +52,22 @@ S, E, I, R = sol.y
 # Reproductive number (R0) calculation
 R0 = beta / gamma
 
+# save results as npy
+np.save('predicted_infectious.npy', I)
+np.save('predicted_recovered.npy', R)
+
+
 # Plot the results
-plt.figure(figsize=(10, 6))
-plt.plot(t, S, 'b', label='Susceptible')
-plt.plot(t, E, 'y', label='Exposed')
-plt.plot(t, I, 'r', label='Infectious')
-plt.plot(t, R, 'g', label='Recovered')
-plt.scatter(range(len(data)), infectious, color='red', label='Actual Infectious Data', alpha=0.6)
-plt.scatter(range(len(data)), recovered, color='green', label='Actual Recovered Data', alpha=0.6)
-plt.title(f"SEIR Model Dynamics (R0 = {R0:.2f})")
-plt.xlabel("Time (days)")
-plt.ylabel("Population")
-plt.legend()
-plt.grid()
-plt.show()
+# plt.figure(figsize=(10, 6))
+# plt.plot(t, S, 'b', label='Susceptible')
+# plt.plot(t, E, 'y', label='Exposed')
+# plt.plot(t, I, 'r', label='Infectious')
+# plt.plot(t, R, 'g', label='Recovered')
+# plt.scatter(range(len(data)), infectious, color='red', label='Actual Infectious Data', alpha=0.6)
+# plt.scatter(range(len(data)), recovered, color='green', label='Actual Recovered Data', alpha=0.6)
+# plt.title(f"SEIR Model Dynamics (R0 = {R0:.2f})")
+# plt.xlabel("Time (days)")
+# plt.ylabel("Population")
+# plt.legend()
+# plt.grid()
+# plt.show()
