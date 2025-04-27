@@ -23,30 +23,13 @@ def calculate_statistics(actual_infectious, actual_recovered, predicted_infectio
     t_stat_recovered, p_value_recovered = ttest_1samp(recovered_residuals, 0)
 
     # # Print results
-    # print("=== Statistical Significance Test ===")
-    # print(f"MSE (Infectious): {mse_infectious}")
-    # print(f"MSE (Recovered): {mse_recovered}")
-    # print(f"R-squared (Infectious): {r2_infectious}")
-    # print(f"R-squared (Recovered): {r2_recovered}")
-    # print(f"T-test (Infectious): t-stat = {t_stat_infectious}, p-value = {p_value_infectious}")
-    # print(f"T-test (Recovered): t-stat = {t_stat_recovered}, p-value = {p_value_recovered}")
-
-    # Prepare results as a string
-    results = (
-        "=== Statistical Significance Test ===\n"
-        f"MSE (Infectious): {mse_infectious:.4f}\n"
-        f"MSE (Recovered): {mse_recovered:.4f}\n"
-        f"R-squared (Infectious): {r2_infectious:.4f}\n"
-        f"R-squared (Recovered): {r2_recovered:.4f}\n"
-        f"T-test (Infectious): t-stat = {t_stat_infectious:.4f}, p-value = {p_value_infectious:.4f}\n"
-        f"T-test (Recovered): t-stat = {t_stat_recovered:.4f}, p-value = {p_value_recovered:.4f}\n"
-    )
-
-    # Display results in a pop-up window
-    root = tk.Tk()
-    root.withdraw()  # Hide the root window
-    messagebox.showinfo("Significance Test Results", results)
-
+    print("=== Statistical Significance Test ===")
+    print(f"MSE (Infectious): {mse_infectious}")
+    print(f"MSE (Recovered): {mse_recovered}")
+    print(f"R-squared (Infectious): {r2_infectious}")
+    print(f"R-squared (Recovered): {r2_recovered}")
+    print(f"T-test (Infectious): t-stat = {t_stat_infectious}, p-value = {p_value_infectious}")
+    print(f"T-test (Recovered): t-stat = {t_stat_recovered}, p-value = {p_value_recovered}")
     
     return {
         "mse_infectious": mse_infectious,
