@@ -24,12 +24,12 @@ def calculate_statistics(actual_infectious, actual_recovered, predicted_infectio
 
     # # Print results
     print("=== Statistical Significance Test ===")
-    print(f"MSE (Infectious): {mse_infectious}")
-    print(f"MSE (Recovered): {mse_recovered}")
-    print(f"R-squared (Infectious): {r2_infectious}")
-    print(f"R-squared (Recovered): {r2_recovered}")
-    print(f"T-test (Infectious): t-stat = {t_stat_infectious}, p-value = {p_value_infectious}")
-    print(f"T-test (Recovered): t-stat = {t_stat_recovered}, p-value = {p_value_recovered}")
+    print(f"MSE (Infectious): {mse_infectious:.2f}")
+    print(f"MSE (Recovered): {mse_recovered:.2f}")
+    print(f"R-squared (Infectious): {r2_infectious:.2f}")
+    print(f"R-squared (Recovered): {r2_recovered:.2f}")
+    print(f"T-test (Infectious): t-stat = {t_stat_infectious:.2f}, p-value = {p_value_infectious:.2f}")
+    print(f"T-test (Recovered): t-stat = {t_stat_recovered:.2f}, p-value = {p_value_recovered:.2f}")
     
     return {
         "mse_infectious": mse_infectious,
@@ -50,8 +50,8 @@ if __name__ == "__main__":
     actual_recovered = data['total_sembuh']
 
     # Load predicted data from SEIR model (replace with actual predictions)
-    predicted_infectious = np.load('predicted_infectious.npy')  # Replace with your SEIR model predictions
-    predicted_recovered = np.load('predicted_recovered.npy')  # Replace with your SEIR model predictions
+    predicted_infectious = np.load('final_infectious_pred.npy')  # Replace with your SEIR model predictions
+    predicted_recovered = np.load('final_recovered_pred.npy')  # Replace with your SEIR model predictions
 
     # Calculate statistics
     calculate_statistics(actual_infectious, actual_recovered, predicted_infectious, predicted_recovered)
