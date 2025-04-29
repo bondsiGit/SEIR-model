@@ -30,14 +30,14 @@ data.to_excel('PMK Karanganyar.xlsx', index=False)
 # Extract initial conditions from the data
 I0 = infectious.iloc[0]  # Initial number of infectious individuals
 R0 = recovered.iloc[0]  # Initial number of recovered individuals
-E0 = 6                         # Assume no exposed individuals initially
+E0 = 0                         # Assume no exposed individuals initially
 N = 100                      # Total population (adjust as needed)
 S0 = N - I0 - R0 - E0         # Initial number of susceptible individuals
 
 # Parameters for the SEIR model
-beta = 0.6   # Infection rate
-sigma = 1/2  # Incubation rate (1/average incubation period)
-gamma = 1/5  # Recovery rate (1/average infectious period)
+beta = 0.49   # Infection rate
+sigma = 1/6.9  # Incubation rate (1/average incubation period)
+gamma = 1/5.7  # Recovery rate (1/average infectious period)
 
 # Time points (days)
 t = np.linspace(0, len(data) - 1, len(data))
